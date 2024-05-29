@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>About Us</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Travelix Project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap4/bootstrap.min.css">
+	<link href="/static/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="/static/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="/static/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+	<link rel="stylesheet" type="text/css" href="/static/plugins/OwlCarousel2-2.2.1/animate.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/about_styles.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/about_responsive.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/drop.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/static/css/loginbtn.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/nav.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/contact.css">
+
+</head>
+
+<body>
+
+	<div class="super_container">
+
+		{% include "header.html" %}
+
+		<div class="menu trans_500">
+			<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+				<div class="menu_close_container">
+					<div class="menu_close"></div>
+				</div>
+				<div class="logo menu_logo"><a href="#"><img src="/static/images/logo.png" alt=""></a></div>
+				<ul>
+					<li class="menu_item"><a href="{% url 'home' %}">home</a></li>
+					<li class="menu_item"><a href="#">about us</a></li>
+					<li class="menu_item"><a href="{% url 'offers' %}">offers</a></li>
+					<!-- <li class="menu_item"><a href="{% url 'blog' %}">news</a></li> -->
+					<li class="menu_item"><a href="{% url 'contact' %}">contact</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Home -->
+
+		<div class="home">
+			<div class="home_background parallax-window" data-parallax="scroll"
+				data-image-src="/static/images/about_background.jpg"></div>
+			<div class="home_content">
+				<div class="home_title">about us</div>
+			</div>
+		</div>
+
+		<!-- Intro -->
+
+		<div class="intro">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7">
+						<div class="intro_image"><img src="/static/images/abouttttttttttt.png" alt=""></div>
+					</div>
+					<div class="col-lg-5">
+						<div class="intro_content">
+
+							{% for n in abouttData %}
+
+
+							<div class="intro_title">{{ n.aboutt_title }}</div>
+							<p class="intro_text">{{ n.aboutt_des }}
+							</p>
+
+							{% endfor %}
+							<div class="button intro_button">
+								<div class="button_bcg"></div><a href="#">explore
+									now<span></span><span></span><span></span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Stats -->
+
+		<div class="stats">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+						<div class="section_title">years statistics</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-10 offset-lg-1 text-center">
+						<p class="stats_text">To use a sample as a guide to an entire population, it is important that
+							it truly represents the overall population. Representative sampling assures that inferences
+							and conclusions can safely extend from the sample to the population as a whole. A major
+							problem lies in determining the extent that the sample chosen is actually representative.
+							Statistics offers methods to estimate and correct for any bias within the sample and data
+							collection procedures. There are also methods of experimental design that can lessen these
+							issues at the outset of a study, strengthening its capability to discern truths about the
+							population. </p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div class="stats_years">
+							<div class="stats_years_last">2023</div>
+							<div class="stats_years_new float-right">2024</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div class="stats_contents">
+
+							<!-- Stats Item -->
+							<div class="stats_item d-flex flex-md-row flex-column clearfix">
+								<div class="stats_last order-md-1 order-3">
+									<div
+										class="stats_last_icon d-flex flex-column align-items-center justify-content-end">
+										<img src="/static/images/stats_1.png" alt="">
+									</div>
+									<div class="stats_last_content">
+										<div class="stats_number">1642</div>
+										<div class="stats_type">Clients</div>
+									</div>
+								</div>
+								<div class="stats_bar order-md-2 order-2" data-x="1642" data-y="3527"
+									data-color="#31124b">
+									<div class="stats_bar_perc">
+										<div>
+											<div class="stats_bar_value"></div>
+										</div>
+									</div>
+								</div>
+								<div class="stats_new order-md-3 order-1 text-right">
+									<div
+										class="stats_new_icon d-flex flex-column align-items-center justify-content-end">
+										<img src="/static/images/stats_1.png" alt="">
+									</div>
+									<div class="stats_new_content">
+										<div class="stats_number">3527</div>
+										<div class="stats_type">Clients</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Stats Item -->
+							<div class="stats_item d-flex flex-md-row flex-column clearfix">
+								<div class="stats_last order-md-1 order-3">
+									<div
+										class="stats_last_icon d-flex flex-column align-items-center justify-content-end">
+										<img src="/static/images/stats_2.png" alt="">
+									</div>
+									<div class="stats_last_content">
+										<div class="stats_number">768</div>
+										<div class="stats_type">Returning Clients</div>
+									</div>
+								</div>
+								<div class="stats_bar order-md-2 order-2" data-x="768" data-y="145"
+									data-color="#a95ce4">
+									<div class="stats_bar_perc">
+										<div>
+											<div class="stats_bar_value"></div>
+										</div>
+									</div>
+								</div>
+								<div class="stats_new order-md-3 order-1 text-right">
+									<div
+										class="stats_new_icon d-flex flex-column align-items-center justify-content-end">
+										<img src="/static/images/stats_2.png" alt="">
+									</div>
+									<div class="stats_new_content">
+										<div class="stats_number">145</div>
+										<div class="stats_type">Returning Clients</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Stats Item -->
+							<div class="stats_item d-flex flex-md-row flex-column clearfix">
+								<div class="stats_last order-md-1 order-3">
+									<div
+										class="stats_last_icon d-flex flex-column align-items-center justify-content-end">
+										<img src="/static/images/stats_3.png" alt="">
+									</div>
+									<div class="stats_last_content">
+										<div class="stats_number">11546</div>
+										<div class="stats_type">Reach</div>
+									</div>
+								</div>
+								<div class="stats_bar order-md-2 order-2" data-x="11546" data-y="9321"
+									data-color="#fa6f1b">
+									<div class="stats_bar_perc">
+										<div>
+											<div class="stats_bar_value"></div>
+										</div>
+									</div>
+								</div>
+								<div class="stats_new order-md-3 order-1 text-right">
+									<div
+										class="stats_new_icon d-flex flex-column align-items-center justify-content-end">
+										<img src="/static/images/stats_3.png" alt="">
+									</div>
+									<div class="stats_new_content">
+										<div class="stats_number">9321</div>
+										<div class="stats_type">Reach</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Stats Item -->
+							<div class="stats_item d-flex flex-md-row flex-column clearfix">
+								<div class="stats_last order-md-1 order-3">
+									<div
+										class="stats_last_icon d-flex flex-column align-items-center justify-content-end">
+										<img src="/static/images/stats_4.png" alt="">
+									</div>
+									<div class="stats_last_content">
+										<div class="stats_number">3729</div>
+										<div class="stats_type">Routs</div>
+									</div>
+								</div>
+								<div class="stats_bar order-md-2 order-2" data-x="3729" data-y="17429"
+									data-color="#fa9e1b">
+									<div class="stats_bar_perc">
+										<div>
+											<div class="stats_bar_value"></div>
+										</div>
+									</div>
+								</div>
+								<div class="stats_new order-md-3 order-1 text-right">
+									<div
+										class="stats_new_icon d-flex flex-column align-items-center justify-content-end">
+										<img src="/static/images/stats_4.png" alt="">
+									</div>
+									<div class="stats_new_content">
+										<div class="stats_number">17429</div>
+										<div class="stats_type">More Items</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		{% include "footer.html" %}
+		<!-- Copyright -->
+
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 order-lg-1 order-2  ">
+						<div class="copyright_content d-flex flex-row align-items-center">
+							<div><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy;
+								<script>document.write(new Date().getFullYear());</script> All rights reserved | This
+								template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+									href="https://colorlib.com" target="_blank">Yatra</a>
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-9 order-lg-2 order-1">
+						<div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
+							<div class="footer_nav">
+								<ul class="footer_nav_list">
+									<li class="footer_nav_item"><a href="{% url 'home' %}">home</a></li>
+									<li class="footer_nav_item"><a href="#">about us</a></li>
+									<li class="footer_nav_item"><a href="{% url 'offers' %}">offers</a></li>
+									<!-- <li class="footer_nav_item"><a href="{% url 'blog' %}">news</a></li> -->
+									<li class="footer_nav_item"><a href="{% url 'contact' %}">contact</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="/static/js/jquery-3.2.1.min.js"></script>
+	<script src="/static/css/bootstrap4/bootstrap.min.js"></script>
+	<script src="/static/css/bootstrap4/popper.js"></script>
+	<script src="/static/plugins/greensock/TweenMax.min.js"></script>
+	<script src="/static/plugins/greensock/TimelineMax.min.js"></script>
+	<script src="/static/plugins/scrollmagic/ScrollMagic.min.js"></script>
+	<script src="/static/plugins/greensock/animation.gsap.min.js"></script>
+	<script src="/static/plugins/greensock/ScrollToPlugin.min.js"></script>
+	<script src="/static/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+	<script src="/static/plugins/easing/easing.js"></script>
+	<script src="/static/plugins/parallax-js-master/parallax.min.js"></script>
+	<script src="/static/js/about_custom.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+
+</body>
+
+</html>

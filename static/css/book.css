@@ -1,0 +1,40 @@
+.search_input
+{
+	width: 100%;
+	height: 46px;
+	border: none;
+	outline: none;
+	padding-left: 15px;
+	padding-right: 15px;
+	font-size: 13px;
+	font-weight: 600;
+	color: #929191;
+}
+.search_item:first-child
+{
+	width: 13.453%;
+}
+.search_item:nth-child(2)
+{
+	width: 13.961%;
+}
+.search_item:nth-child(3)
+{
+	width: 13.961%;
+}
+.search_item:nth-child(4)
+{
+	width: 9.947%;
+}
+.search_item:nth-child(5)
+{
+	width: 9.947%;
+}
+.search_item div
+{
+	font-size: 13px;
+	font-weight: 700;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	margin-bottom: 14px;
+}

@@ -1,0 +1,16 @@
+.btnn{
+    background-color: transparent;
+    color: #fff;
+    border:transparent ;
+    border-color:transparent ;   
+}
+.btnn:hover{
+    color: #fff;
+    background-color :rgb(160, 143, 255) ;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.forgot_pw a{
+    margin-left: 30px;
+}

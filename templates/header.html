@@ -1,0 +1,202 @@
+<!--Singup Modal -->
+<div class="modal fade" id="singupModal" tabindex="-1" aria-labelledby="singupModal" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="singupModalTitle">Singup Here</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form action="/singup" method="POST">
+					{% csrf_token %}
+					<div class="mb-3">
+						<label for="username" class="form-label">Username</label>
+						<input type="text" class="form-control" id="username" name="username"
+							placeholder="Choose a unique username (Lowercase & alphanumeric)" required>
+					</div>
+
+					<div class="mb-3">
+						<label for="fname" class="form-label">First Name</label>
+						<input type="text" class="form-control" id="fname" name="fname" placeholder="First Name"
+							required>
+					</div>
+						
+					<div class="mb-3">
+						<label for="lname" class="form-label">Last Name</label>
+						<input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name"
+							required>
+					</div>
+
+					<div class="mb-3">
+						<label for="email" class="form-label">Email address</label>
+						<input type="email" class="form-control" id="email" name="email" placeholder="name@example.com"
+							required>
+					</div>
+
+					<div class="mb-3">
+						<label for="pass1" class="form-label">Choose a password</label>
+						<input type="password" class="form-control" id="pass1" name="pass1"
+							placeholder="Choose your password" required>
+					</div>
+
+					<div class="mb-3">
+						<label for="pass2" class="form-label">Confirm password</label>
+						<input type="password" class="form-control" id="pass2" name="pass2"
+							placeholder="Enter your password again" required>
+					</div>
+
+					<!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="loginModalTitle">Login Here</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form action="/login" method="POST">
+					{% csrf_token %}
+					<div class="mb-3">
+						<label for="username" class="form-label">Username</label>
+						<input type="text" class="form-control" id="loginusername" name="loginusername"
+							placeholder="Enter your username" required>
+					</div>
+
+					<div class="mb-3">
+						<label for="pass" class="form-label">Enter a password</label>
+						<input type="password" class="form-control" id="loginpass" name="loginpass"
+							placeholder="Enter your password" required>
+					</div>
+
+					<div class="mb-3">
+						<span class="checkbox">
+							<input type="checkbox" style="margin-left: 5px;" id="check" required />
+							<label for="check">Remember me</label>
+						</span>
+						<a href="/ChangePass" class="forgot_pw" style="margin-left: 203px;">Forgot password?</a>
+					</div>
+
+					<!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Header -->
+<header class="header">
+	<!-- Top Bar -->̥
+	<div class="top_bar">
+
+		<div class="container">
+			<div class="row">
+				<div class="col d-flex flex-row">
+					<div class="phone">+91 9081884581</div>
+					<div class="social">
+						<ul class="social_list">
+							<li class="social_list_item wh"><a href="#"><i class="fa fa-whatsapp"
+										aria-hidden="true"></i></a></li>
+							<li class="social_list_item fa"><a href="#"><i class="fa fa-facebook"
+										aria-hidden="true"></i></a></li>
+							<li class="social_list_item lin"><a href="#"><i class="fa fa-linkedin"
+										aria-hidden="true"></i></a></li>
+							<li class="social_list_item in"><a href="#"><i class="fa fa-instagram"
+										aria-hidden="true"></i></a></li>
+							<li class="social_list_item git"><a href="#"><i class="fa fa-github"
+										aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+					<div class="user_box ml-auto">
+						<!-- <div class="user_box_login user_box_link"><a href="#">login</a></div>
+						<div class="user_box_register user_box_link"><a href="#">register</a></div>|
+						<div class="user_box_register user_box_link"><a href="#">logout</a></div> -->
+						<!-- Button to trigger Singup modal -->
+
+						{% if user.is_authenticated %}
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0" style="color:#fff">
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+									aria-expanded="false">
+									Welcome, {{ request.user }}
+								</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="/logout">Logout</a></li>
+								</ul>
+							</li>
+						</ul>
+						{% else %}
+						<button type="submit" class="btnn" data-bs-toggle="modal" data-bs-target="#loginModal">
+							Login
+						</button>
+						<button type="submit" class="btnn mx-2 my-2" data-bs-toggle="modal"
+							data-bs-target="#singupModal">
+							Singup
+						</button>
+						{% endif %}
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Main Navigation -->
+
+	<nav class="main_nav">
+		<div class="container">
+			<div class="row">
+				<div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
+					<div class="logo_container">
+						<div class="logo"><a href="#"><img src="" alt="">Yatra</a></div>
+					</div>
+					<div class="main_nav_container ml-auto">
+						<ul class="main_nav_list">
+							<li class="main_nav_item"><a href="{% url 'home' %}">home</a></li>
+							<li class="main_nav_item"><a href="{% url 'offers' %}">offers</a></li>
+
+							<div class="main_nav_item dropdown">
+								<button class="dropbtn">Booking</button>
+								<div class="dropdown-content">
+									<a href="{% url 'findbus' %}">Findbus</a>
+									<a href="{% url 'seebookings' %}">Cancel Booking</a>
+									<a href="#">Comming Soon.. Download Ticket</a>
+								</div>
+							</div>
+							<!-- <li class="main_nav_item"><a href="{% url 'blog' %}">news</a></li> -->
+							<li class="main_nav_item"><a href="{% url 'contact' %}">contact</a></li>
+							<li class="main_nav_item"><a href="{% url 'about' %}">about us</a></li>
+
+						</ul>
+					</div>
+
+					<form id="search_form" class="search_form bez_1">
+						<input type="search" class="search_content_input bez_1">
+					</form>
+
+					<div class="hamburger">
+						<i class="fa fa-bars trans_200"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+</header>

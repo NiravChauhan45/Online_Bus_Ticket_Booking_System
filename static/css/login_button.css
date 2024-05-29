@@ -1,0 +1,13 @@
+.btnl {
+    background: transparent;
+    border: 2px solid transparent;
+    color: #fff;
+    margin-top: 6px;
+    border-radius: 4px;
+}
+
+.btnl:hover{
+    color:rgba(132, 9, 233, 0.979);
+    /* background-color:rgba(233, 229, 9, 0.979);  */
+    background-color:rgba(233, 9, 9, 0.979); 
+}

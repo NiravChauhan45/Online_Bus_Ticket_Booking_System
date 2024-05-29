@@ -1,0 +1,76 @@
+.phone
+{
+	display: inline-block;
+	margin-right: 36px;
+	line-height: 36px;
+	font-size: 15px;
+	font-weight: 600;
+	color: #FFFFFF;
+}
+.social_list_item
+{
+	position: relative;
+	display: inline-block;
+	margin-right: 3px;
+}
+.social_list_item:last-child
+{
+	margin-right: 0px;
+}
+.social_list_item a
+{
+	display: block;
+	width: 100%;
+	padding-left: 10px;
+	padding-right: 10px;
+	line-height: 36px;
+}
+.wh:hover a i
+{
+	color: #37f807;
+}
+.fa:hover a i
+{
+	color: #1a72f7;
+}
+.lin:hover a i
+{
+	color: #075bf8;
+}
+.in:hover a i
+{
+	color: #752aec;
+}
+.git:hover a i
+{
+	color: whitesmoke;
+}
+.social_list_item a i
+{
+	font-size: 15px;
+	color: #FFFFFF;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.social_list_item a:hover
+{
+	color: #FFFFFF;
+}
+
+
+/* contact page */
+
+.input_field{
+	height: 48px;
+	font-size: 18px;
+	font-weight: 400;
+	border: none;
+	outline: none;
+	background: transparent;
+	color: #FFFFFF;
+	border-bottom: solid 2px #e1e1e1;
+}
+
