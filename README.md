@@ -12,6 +12,6 @@ step-7 : pip install setuptools
 
 then after we will put the three commands:
 
-step-1 : python manage.py makemigration
+step-1 : python manage.py makemigrations
 step-2 : python manage.py migrate
 step-3 : python manage.py runserver
